@@ -18,8 +18,8 @@ const Todo = ({ text, todo, todos, setTodos }) => {
         }))
     }
     return (
-        <div>
-            <li>{text}</li>
+        <div className='item'>
+            {text}
             <button onClick={completeHandler}>done</button>
             <button onClick={deletleHandler}>trash</button>
         </div>
