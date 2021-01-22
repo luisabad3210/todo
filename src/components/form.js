@@ -18,7 +18,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
 
     return (
         <form>
-            <input className='input' value={inputText} onChange={inputTextHandler} placeholder='task'/>
+            <input className='input' value={inputText} onChange={inputTextHandler} placeholder='add a task'/>
             <button className='inputBtn' onClick={submitTodoHandler} type='submit'><img src={Add} width='20px' height='20px'/></button>
         </form>
     )

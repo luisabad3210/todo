@@ -26,7 +26,7 @@ function App() {
   return (
     <div className='App'>
       <div className='todo'>
-        <div>Todo</div>
+        {/* <div>Todo</div> */}
         <h1>{currentDate}</h1>
         <div>no tasks</div>
         <hr></hr>

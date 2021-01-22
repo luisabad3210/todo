@@ -1,4 +1,6 @@
 import React from 'react';
+import Trash from './images/trash.png'
+import Done from './images/done.png'
 
 
 const Todo = ({ text, todo, todos, setTodos }) => {
@@ -20,8 +22,10 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     return (
         <div className='item'>
             {text}
-            <button onClick={completeHandler}>done</button>
-            <button onClick={deletleHandler}>trash</button>
+            <div className='todoBtn'>
+                <button  className='done' onClick={completeHandler} ><img src={Done} width='15px' height='15px'/></button>
+                <button className ='trash' onClick={deletleHandler} ><img src={Trash} width='15px' height='15px'/></button>
+            </div>
         </div>
     )
 }
