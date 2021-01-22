@@ -1,8 +1,7 @@
 import React from 'react';
-
+import Add from './images/add.png'
 
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
-
 
     const inputTextHandler = (e) => {
         // console.log(e.target.value)
@@ -19,17 +18,8 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
 
     return (
         <form>
-            <input value={inputText} onChange={inputTextHandler}/>
-            <button onClick={submitTodoHandler} type='submit'>add</button>
-
-            {/* <div>
-                <select name='todos'>
-                    <option value='all'>All</option>
-                    <option value='complete'>Complete</option>
-                    <option value='unconplete'>Unconplete</option>
-                </select>
-            </div> */}
-
+            <input className='input' value={inputText} onChange={inputTextHandler} placeholder='task'/>
+            <button className='inputBtn' onClick={submitTodoHandler} type='submit'><img src={Add} width='20px' height='20px'/></button>
         </form>
     )
 }
