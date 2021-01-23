@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-// import logo from './logo.svg';
 import Form from './components/form'
 import TodoList from './components/todoList'
-
 import Add from './components/images/add.png'
 import Cancel from './components/images/cancel.jpg'
 
@@ -12,15 +10,29 @@ function App() {
 
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [showInput, setShowInput] = useState(false)
+  const [showInput, setShowInput] = useState(false);
   
   let currentDate = Date().toLocaleString().slice(0, 10)
+  let count = todos.length
 
-  const showInputHandler = (event) => {
-    // event.preventDefault()
+  const showInputHandler = () => {
     setShowInput(!showInput)
+  }
 
-    console.log(showInput)
+  const numberOfTask = () => {
+    if (count === 1) {
+      return count + ' ' + 'task'
+    } else {
+      return count + ' ' + 'tasks'
+    }
+  }
+
+  const status = () => {
+    if (count > 5) {
+      return 'scroll to view full list'
+    } else if (count === 0) {
+      return 'Add a task!'
+    }
   }
 
   return (
@@ -28,11 +40,15 @@ function App() {
       <div className='todo'>
         {/* <div>Todo</div> */}
         <h1>{currentDate}</h1>
-        <div>no tasks</div>
+        <div>{numberOfTask()}</div>
         <hr></hr>
         {showInput ? <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText}/> : null }
         <button className='add' onClick={showInputHandler}>{showInput ? <img src={Cancel} width='23px' height='23px' /> : <img src={Add} width='25px' height='25px'/>}</button>
-        <TodoList setTodos ={setTodos} todos={todos}/>
+        
+        <div className='todoListContainer'>
+          <TodoList setTodos ={setTodos} todos={todos}/>
+        </div>
+        {status()}
       </div>
     </div>
   );
