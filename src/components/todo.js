@@ -21,9 +21,9 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     }
     return (
         <div className='item'>
-            {text}
+            <div className={todo.completed ? 'completed' : ''}>{text}</div>
             <div className='todoBtn'>
-                <button  className='done' onClick={completeHandler} ><img src={Done} width='15px' height='15px'/></button>
+                <button  className={todo.completed ? "doneNoneActive" : "doneActive"} onClick={completeHandler} ><img src={Done} width='15px' height='15px'/></button>
                 <button className ='trash' onClick={deletleHandler} ><img src={Trash} width='15px' height='15px'/></button>
             </div>
         </div>
