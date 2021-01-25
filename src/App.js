@@ -21,9 +21,9 @@ function App() {
 
   const numberOfTask = () => {
     if (count === 1) {
-      return count + ' ' + 'task'
+      return `${count} task`
     } else {
-      return count + ' ' + 'tasks'
+      return `${count} tasks`
     }
   }
 
@@ -43,7 +43,7 @@ function App() {
         <div>{numberOfTask()}</div>
         <hr></hr>
         {showInput ? <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText}/> : null }
-        <button className='add' onClick={showInputHandler}>{showInput ? <img src={Cancel} width='23px' height='23px' /> : <img src={Add} width='25px' height='25px'/>}</button>
+        <button className='add' onClick={showInputHandler}>{showInput ? <img src={Cancel} width='23px' height='23px' alt='' title=''/> : <img src={Add} width='25px' height='25px' alt='' title=''/>}</button>
         
         <div className='todoListContainer'>
           <TodoList setTodos ={setTodos} todos={todos}/>

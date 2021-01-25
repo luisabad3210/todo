@@ -22,7 +22,7 @@ const Form = ({ setInputText, todos, setTodos, inputText }) => {
     return (
         <form>
             <input className='input' value={inputText} onChange={inputTextHandler} placeholder='add a task'/>
-            <button className={inputText === "" ? 'inputBtn inputBtnNoneActive' : 'inputBtn inputBtnActive'} onClick={submitTodoHandler} type='submit'><img src={Add} width='20px' height='20px'/></button>
+            <button className={inputText === "" ? 'inputBtn inputBtnNoneActive' : 'inputBtn inputBtnActive'} onClick={submitTodoHandler} type='submit'><img src={Add} width='20px' height='20px' alt='' title=''/></button>
         </form>
     )
 }

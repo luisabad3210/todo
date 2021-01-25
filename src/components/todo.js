@@ -23,8 +23,8 @@ const Todo = ({ text, todo, todos, setTodos }) => {
         <div className='item'>
             <div className={todo.completed ? 'completed' : ''}>{text}</div>
             <div className='todoBtn'>
-                <button  className={todo.completed ? "doneNoneActive" : "doneActive"} onClick={completeHandler} ><img src={Done} width='15px' height='15px'/></button>
-                <button className ='trash' onClick={deletleHandler} ><img src={Trash} width='15px' height='15px'/></button>
+                <button  className={todo.completed ? "doneNoneActive" : "doneActive"} onClick={completeHandler} ><img src={Done} width='15px' height='15px' alt='' title=''/></button>
+                <button className ='trash' onClick={deletleHandler} ><img src={Trash} width='15px' height='15px' alt='' title=''/></button>
             </div>
         </div>
     )
